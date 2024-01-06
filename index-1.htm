@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Сервис приёма платежей - Unitpay платёжный агрегатор</title>
+    <meta content="Подключение платежной системы для интернет-магазинов и любых онлайн-бизнесов. Принимайте платежи удобными способами. Высокая конверсия. Быстрое подключение." name="description">
+
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/static/apple_icons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple_icons/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple_icons/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple_icons/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple_icons/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple_icons/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple_icons/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple_icons/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple_icons/apple-touch-icon-180x180.png"/>
+
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/build/front_front_ru_new_base.css?a25f8b0568fdbebc2875">
+    
+    <link rel="stylesheet" href="/build/front_front_ru_new_index.css?a25f8b0568fdbebc2875">
+
+        
+        <script src="/build/runtime.js?a25f8b0568fdbebc2875"></script><script src="/build/front_front_ru_new_base.js?a25f8b0568fdbebc2875"></script>
+        <script src="/build/google_analytics.js?a25f8b0568fdbebc2875"></script>
+
+                                        <span id="ym-config" data-ym-code="66412627"></span>
+        <script src="/build/yandex_metrika_init.js?a25f8b0568fdbebc2875"></script>
+    
+    
+    <script src="/build/front_front_ru_new_index.js?a25f8b0568fdbebc2875"></script>
+</head>
+
+<body class="body">
+<header class="header">
+    <div class="header__row">
+        <div class="header__col header__col_logo">
+            <a href="https://unitpay.ru/"><div class="logo"></div></a>
+        </div>
+        <div class="header__col header__col_menu">
+            <div class="header-menu">
+                <div class="header-menu__list">
+                    <div class="header-menu__item header-menu__item_submenu">
+                        <a class="header-menu__link header-menu__link_submenu" href="https://unitpay.ru/products">Продукты</a>
+                        <div class="header-menu__submenu">
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#payments" class="header-menu__link">Прием платежей</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#paymentMethods" class="header-menu__link">Методы оплаты</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#availabilities" class="header-menu__link">Возможности</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#cashbox" class="header-menu__link">Онлайн-касса (54-ФЗ)</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#security" class="header-menu__link">Безопасность</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#payouts" class="header-menu__link">Выплаты</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#masspayments" class="header-menu__link">Массовые выплаты</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu__item">
+                        <a class="header-menu__link" href="https://unitpay.ru/tariffs">Тарифы</a>
+                    </div>
+                    <div class="header-menu__item">
+                        <a class="header-menu__link" href="https://unitpay.ru/receipts">Юнит.Чеки</a>
+                    </div>
+                    <div class="header-menu__item header-menu__item_submenu">
+                        <p class="header-menu__link header-menu__link_submenu">Подключение</p>
+                        <div class="header-menu__submenu">
+                            <div class="header-menu__submenu_link">
+                                <a href="https://help.unitpay.ru/first_steps" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Начало работы</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://help.unitpay.ru/first_steps/moderation#trebovaniya-k-dobavlyaemym-saitam" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Требования к проектам</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://help.unitpay.ru/payments" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Для разработчиков</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://help.unitpay.ru/modules" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Готовые модули</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://help.unitpay.ru/faq-partners" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Вопросы и ответы</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu__item header-menu__item_submenu">
+                        <p class="header-menu__link header-menu__link_submenu">Ресурсы</p>
+                        <div class="header-menu__submenu">
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/company" class="header-menu__link">О компании</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/support" class="header-menu__link">Служба поддержки</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/affiliates" class="header-menu__link">Партнерская программа</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/rules" class="header-menu__link">Правила использования сервиса</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/policy" class="header-menu__link">Политика обработки персональных данных</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://dv0owqnldl9t2.cloudfront.net/Completely_publicly_available_information.pdf" rel="nofollow" target="_blank" class="header-menu__link header-menu__link_external">Правовая информация</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__col header__col_phone">
+            <a href="tel:88002228210" class="header__phone">8 800 222-82-10</a>
+        </div>
+        <div class="header__col header__col_aside">
+            <div class="header-aside">
+                <div class="header-aside__menu">
+                    <div class="header-aside__item">
+                        <a class="header-aside__link" href="https://unitpay.ru/partner/signin?demo=1">Демо</a>
+                    </div>
+                    <div class="header-aside__item">
+                        <a class="header-aside__link" href="https://unitpay.ru/signup/legal">Регистрация</a>
+                    </div>
+                </div>
+                <div class="header-aside__buttons-row">
+                    <a href="https://unitpay.ru/partner/signin"><div class="header-aside__button header-aside__button_login">Войти</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="header__col header__col_hamburger">
+            <div class="header__button">
+                <div class="header__icon header__icon_hamburger">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__col header__col_auth">
+            <div class="header__button">
+                <a href="https://unitpay.ru/partner/signin"><div class="header__icon header__icon_auth"></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="header__mobile-dropdown">
+        <div class="mobile-header-dropdown">
+            <div class="mobile-header-dropdown__menu">
+                <div class="header-mobile-menu">
+                    <div class="header-mobile-menu__group">
+                        <div class="header-mobile-menu__title">
+                            <a class="header-mobile-menu__link" href="https://unitpay.ru/products">Продукты</a>
+                        </div>
+                        <div class="header-mobile-menu__list">
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#payments" class="header-mobile-menu__link">Прием платежей</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#paymentMethods" class="header-mobile-menu__link">Методы оплаты</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#availabilities" class="header-mobile-menu__link">Возможности</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#cashbox" class="header-mobile-menu__link">Онлайн-касса (54-ФЗ)</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#security" class="header-mobile-menu__link">Безопасность</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/products#payouts" class="header-mobile-menu__link">Выплаты</a>
+                            </div>
+                            <div class="header-menu__submenu_link">
+                                <a href="https://unitpay.ru/products#masspayments" class="header-mobile-menu__link">Массовые выплаты</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-mobile-menu__group">
+                        <div class="header-mobile-menu__title">
+                            <a class="header-mobile-menu__link" href="https://unitpay.ru/tariffs">Тарифы</a>
+                        </div>
+                    </div>
+                    <div class="header-mobile-menu__group">
+                        <div class="header-mobile-menu__title">
+                            <a class="header-mobile-menu__link" href="https://unitpay.ru/receipts">Юнит.Чеки</a>
+                        </div>
+                    </div>
+                    <div class="header-mobile-menu__group">
+                        <div class="header-mobile-menu__title">
+                            <p class="header-mobile-menu__link">Подключение</p>
+                        </div>
+                        <div class="header-mobile-menu__list">
+                            <div class="header-mobile-menu__item">
+                                <a href="https://help.unitpay.ru/first_steps" rel="nofollow" target="_blank" class="header-mobile-menu__link">Начало работы</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://help.unitpay.ru/first_steps/moderation#trebovaniya-k-dobavlyaemym-saitam" rel="nofollow" target="_blank" class="header-mobile-menu__link">Требования к проектам</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://help.unitpay.ru/payments" rel="nofollow" target="_blank" class="header-mobile-menu__link">Для разработчиков</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://help.unitpay.ru/modules" rel="nofollow" target="_blank" class="header-mobile-menu__link">Готовые модули</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://help.unitpay.ru/faq-partners" rel="nofollow" target="_blank" class="header-mobile-menu__link">Вопросы и ответы</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-mobile-menu__group">
+                        <div class="header-mobile-menu__title">
+                            <p class="header-mobile-menu__link">Ресурсы</p>
+                        </div>
+                        <div class="header-mobile-menu__list">
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/company" class="header-mobile-menu__link">О компании</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/support" class="header-mobile-menu__link">Служба поддержки</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/affiliates" class="header-mobile-menu__link">Партнерская программа</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/rules" class="header-mobile-menu__link">Правила использования сервиса</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://unitpay.ru/policy" class="header-mobile-menu__link">Политика обработки персональных данных</a>
+                            </div>
+                            <div class="header-mobile-menu__item">
+                                <a href="https://dv0owqnldl9t2.cloudfront.net/Completely_publicly_available_information.pdf" rel="nofollow" target="_blank" class="header-mobile-menu__link">Правовая информация</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-header-dropdown__social">
+                <div class="social">
+                    <div class="social__list">
+                        <div class="social__item">
+                            <a href="https://t.me/unitpay" rel="nofollow" target="_blank" class="social__link">
+                                <div class="social__icon social__icon_telegram"></div>
+                            </a>
+                        </div>
+                        <div class="social__item">
+                            <a href="https://vk.com/unitpay" rel="nofollow" target="_blank" class="social__link">
+                                <div class="social__icon social__icon_vk"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="page page_home">
+        <div class="page__row">
+            <div class="wrapper">
+                <div class="main-banner main-banner_home">
+                    <div class="main-banner__row">
+                        <div class="main-banner__col main-banner__col_main">
+                            <div class="main-banner__title title title_h1">
+                                Онлайн-платежи с&nbsp;бесплатной кассой
+                            </div>
+                            <div class="main-banner__buttons-row">
+                                <a href="https://unitpay.ru/signup/legal" class="main-banner__button button button_green js-popup-trigger">Подключиться</a>
+                            </div>
+                        </div>
+                        <div class="main-banner__col main-banner__col_image">
+                            <div class="main-banner__image">
+                                <div class="parallax-banner">
+                                    <div class="parallax-banner__layout parallax-banner__layout_green-check"></div>
+                                    <div class="parallax-banner__layout parallax-banner__layout_grey-card"></div>
+                                    <div class="parallax-banner__layout parallax-banner__layout_receipt"></div>
+                                    <div class="parallax-banner__layout parallax-banner__layout_receipt-shadow"></div>
+                                    <div class="parallax-banner__layout parallax-banner__layout_phone"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="wrapper">
+                <div class="features-list features-list_home">
+                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_card"></div>
+                            <div class="feature-row__text">Прием платежей от клиентов из России и из-за рубежа</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_receipt"></div>
+                            <div class="feature-row__text">Бесплатная альтернатива онлайн-кассам - Юнит.Чеки</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_clock"></div>
+                            <div class="feature-row__text">Быстрое подключение и высокая конверсия при оплате</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_shield"></div>
+                            <div class="feature-row__text">Собственное anti-fraud решение - 3ds native</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_lock"></div>
+                            <div class="feature-row__text">Защита данных по стандарту PCI DSS</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_tag"></div>
+                            <div class="feature-row__text">Более 40 готовых модулей для CMS и CRM</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_recurring"></div>
+                            <div class="feature-row__text">Вывод средств на расчетный счет на следующий день</div>
+            </div>
+</div>                                            <div class="features-list__item">
+    <div class="feature-row feature-row_tablet-column">
+        <div class="feature-row__icon feature-row__icon_cascade"></div>
+                            <div class="feature-row__text">Массовые выплаты</div>
+            </div>
+</div>                                    </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="wrapper">
+                <div class="use-cases">
+                    <div class="use-cases__header">
+                        <div class="use-cases__title title title_h2">Мы предусмотрели сценарии приема и работы с платежами для популярных направлений онлайн-бизнеса</div>
+                    </div>
+                    <div class="use-cases__body">
+                        <div class="use-cases__list">
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_chalkboard"></div>
+    <div class="use-case-box__title">Инфобизнес</div>
+    <div class="use-case-box__description">Выставляйте счета онлайн для российских и зарубежных заказчиков в любой валюте.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_monitor-large"></div>
+    <div class="use-case-box__title">Оплата на сайте</div>
+    <div class="use-case-box__description">Подключите платежи с банковских карт и электронных кошельков для интернет-проектов.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_shopping-cart"></div>
+    <div class="use-case-box__title">Интернет-магазины</div>
+    <div class="use-case-box__description">Приём платежей с карт на сайте, в приложении и эффективные технические решения для автоматизации процессов бизнеса.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_social-networks"></div>
+    <div class="use-case-box__title">Соцсети</div>
+    <div class="use-case-box__description">Принимайте оплату за товары и услуги со всего мира, даже если у вас нет собственного сайта.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_mobile-device"></div>
+    <div class="use-case-box__title">Мобильные приложения</div>
+    <div class="use-case-box__description">Выбирайте выгодный для вас формат: единичные платежи или подписки.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_lips"></div>
+    <div class="use-case-box__title">Beauty &amp; Fashion</div>
+    <div class="use-case-box__description">Приём платежей с карт на сайте, в приложении и эффективные технические решения для автоматизации процессов бизнеса.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_subscribe"></div>
+    <div class="use-case-box__title">Бизнесы по подписке</div>
+    <div class="use-case-box__description">Выставляйте счета онлайн для российских и зарубежных заказчиков в любой валюте.</div>
+</div>                                </div>
+                                                            <div class="use-cases__item">
+                                    <div class="use-case-box">
+    <div class="use-case-box__icon use-case-box__icon_car"></div>
+    <div class="use-case-box__title">Службы такси</div>
+    <div class="use-case-box__description">Упростите работу с входящими платежами, отмененными заказами и выплатами водителям.</div>
+</div>                                </div>
+                                                    </div>
+                    </div>
+                    <div class="use-cases__footer">
+                        <div class="use-cases__foot-subtitle">Ищете уникальное решение? — Напишите нашей команде поддержки</div>
+                        <div class="use-cases__button-wrapper">
+                            <a href="#contactForm" class="use-cases__button button button_blue">Получить консультацию</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="wrapper">
+                <div class="tariffs">
+                    <div class="tariffs__header">
+                        <div class="tariffs__title title title_h2">Тарифы</div>
+                        <div class="tariffs__description">Комиссии по платежам зависят от оборота вашего проекта, чем выше оборот, тем ниже ставка. <a class="tariffs__link" href="https://unitpay.ru/tariffs">Подробнее о тарифах</a></div>
+                        <div class="tariffs__description tariffs__description_smaller">Хотите индивидуальные условия? <a class="tariffs__link" href="#contactForm">Напишите нам</a></div>
+                    </div>
+                    <div class="tariffs__body">
+                        <div class="tariffs__list">
+                            <div class="tariffs__item">
+                                <div class="tariffs__box">
+                                    <div class="tariffs__value">0₽</div>
+                                    <div class="tariffs__subtitle">Аренда облачной онлайн-кассы</div>
+                                </div>
+                            </div>
+                            <div class="tariffs__item">
+                                <div class="tariffs__box">
+                                    <div class="tariffs__value">0₽</div>
+                                    <div class="tariffs__subtitle">Фискальный накопитель</div>
+                                </div>
+                            </div>
+                            <div class="tariffs__item">
+                                <div class="tariffs__box">
+                                    <div class="tariffs__value">от 2.6%</div>
+                                    <div class="tariffs__subtitle">Интернет-эквайринг</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tariffs__footer">
+                        <div class="tariffs__payment-systems-list">
+                            <div class="tariffs__ps-logo tariffs__ps-logo_mastercard"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_visa"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_mir"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_sbp"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_qiwi"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_yandex"></div>
+                            <div class="tariffs__ps-logo tariffs__ps-logo_apple"></div>
+                        </div>
+                        <div class="tariffs__rule">С первого дня вам доступны самые популярные платёжные методы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="services-row">
+                <div class="wrapper">
+                    <div class="services-row__header">
+                        <div class="services-row__title title title_h2">Больше возможностей с Unitpay</div>
+                    </div>
+                    <div class="services-row__body">
+                        <div class="services-slider">
+                            <div class="services-slider__row">
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Быстрая активация проекта</div>
+        <div class="service-box__subtitle">Не нужно долго ждать. Сразу после подключения и регистрации можно принимать интернет-платежи.</div>
+    </div>
+    <div class="service-box__image service-box__image_fast-project-activation"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Удобный вывод средств</div>
+        <div class="service-box__subtitle">В автоматическом режиме на следующий день – бесплатно и беспроцентно от любой суммы.</div>
+    </div>
+    <div class="service-box__image service-box__image_convenient-withdrawal-of-funds"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Высокая конверсия</div>
+        <div class="service-box__subtitle">Не теряйте клиентов из-за неудобной оплаты. У Unitpay высокая платёжная конверсия.</div>
+    </div>
+    <div class="service-box__image service-box__image_high-conversion"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Соответствует 54-ФЗ</div>
+        <div class="service-box__subtitle">Используйте свою онлайн-кассу или подключайте Юнит.Чеки. Работаем с Атол-касса, Модуль-касса, E-Com Kassa, Kit Online</div>
+    </div>
+    <div class="service-box__image service-box__image_complies-with-54-fz"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Платежи из-за рубежа</div>
+        <div class="service-box__subtitle">Принимайте оплату в удобной для плательщика валюте. Unitpay автоматически конвертирует валюту и уже на следующий день эти средства зачисляются на ваш расчетный счет.</div>
+    </div>
+    <div class="service-box__image service-box__image_payments-from-abroad"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Рекуррентные платежи</div>
+        <div class="service-box__subtitle">Позволяют покупателям оформлять платную подписку и списывать деньги с карт автоматически, когда это потребуется. Сумму и периодичность вы определяете сами. </div>
+    </div>
+    <div class="service-box__image service-box__image_recurring-payments"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">100% безопасность</div>
+        <div class="service-box__subtitle">Сертификация по стандарту PCI DSS level1 и мощная антифрод-система 3ds native.</div>
+    </div>
+    <div class="service-box__image service-box__image_safe-100"></div>
+</div>                                    </div>
+                                                                    <div class="services-slider__slide">
+                                        <div class="service-box">
+    <div class="service-box__content">
+        <div class="service-box__title">Персональный менеджер</div>
+        <div class="service-box__subtitle">Служба поддержки 24/7 для вас и ваших клиентов.</div>
+    </div>
+    <div class="service-box__image service-box__image_personal-manager"></div>
+</div>                                    </div>
+                                                            </div>
+                            <div class="services-slider__hand services-slider__hand_backward"></div>
+                            <div class="services-slider__hand services-slider__hand_forward"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="wrapper">
+                <div class="modules">
+                    <div class="modules__header">
+                        <div class="modules__title title title_h2">Готовые модули и интеграции</div>
+                        <div class="modules__description">Для начала работы нужно всего лишь установить модуль и заполнить несколько полей, дополнительная разработка не нужна.</div>
+                    </div>
+                    <div class="modules__body">
+                        <div class="modules__logo-list">
+                            <div class="modules__logo modules__logo_1c"></div>
+                            <div class="modules__logo modules__logo_ucoz"></div>
+                            <div class="modules__logo modules__logo_bitrix24"></div>
+                            <div class="modules__logo modules__logo_amocrm"></div>
+                            <div class="modules__logo modules__logo_ecwid"></div>
+                            <div class="modules__logo modules__logo_drupal"></div>
+                            <div class="modules__logo modules__logo_tilda"></div>
+                            <div class="modules__logo modules__logo_wix"></div>
+                            <div class="modules__logo modules__logo_wordpress"></div>
+                        </div>
+                    </div>
+                    <div class="modules__footer">
+                        <div class="modules__buttons-row">
+                            <a href="https://help.unitpay.ru/modules/cms-modules" rel="nofollow" target="_blank" class="modules__button button button_blue">Все модули</a>
+                            <a href="https://help.unitpay.ru/payments" rel="nofollow" target="_blank" class="modules__button button button_linear">Документация и API</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__row">
+            <div class="wrapper">
+                    <link rel="stylesheet" href="/build/front_phone_code.css?a25f8b0568fdbebc2875">
+    <link rel="stylesheet" href="/build/front_front_ru_new_request_row.css?a25f8b0568fdbebc2875">
+
+    <script src="/build/front_front_ru_new_contact_form.js?a25f8b0568fdbebc2875"></script>
+    <script src="/build/front_phone_code.js?a25f8b0568fdbebc2875"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  var onSubmit = async function (token) {
+    let form = document.getElementById('contactFormForm');
+
+    let response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    });
+
+    let result = await response.json();
+    let successBlock = document.getElementById('contactFormSuccess');
+    let errorBlock = document.getElementById('contactFormError');
+
+    if (result.success) {
+      successBlock.innerText = result.text !== undefined ? result.text : 'Success!';
+      successBlock.style.display = 'block';
+      errorBlock.style.display = 'none';
+      form.reset()
+    } else {
+      errorBlock.innerText = result.text !== undefined ? result.text : 'Error!';
+      successBlock.style.display = 'none';
+      errorBlock.style.display = 'block';
+    }
+  }
+</script>
+
+<div class="request-row" id="contactForm">
+    <div class="request-row__header">
+        <div class="request-row__title title title_h1">Оставьте заявку на&nbsp;подключение</div>
+        <div class="request-row__description">Мы свяжемся с вами в ближайшее время</div>
+    </div>
+    <div class="request-row__form">
+        <div class="request-form">
+            <div id="contactFormSuccess" style="display: none"></div>
+            <div id="contactFormError" style="display: none"></div>
+            <form action="https://unitpay.ru/send" method="post" id="contactFormForm"
+                  class="request-form__form">
+                <div class="request-form__body">
+                    <fieldset class="request-form__fieldset">
+                        <input name="client_name" class="input" type="text" required placeholder="Ваше имя"/>
+                    </fieldset>
+                    <fieldset class="request-form__fieldset">
+                        <input name="client_phone" class="input data-intl-tel" type="tel" required pattern="\+?[0-9]+"
+                               placeholder='Номер телефона'
+                               data-custom-validity='Введите номер в указанном формате'/>
+                        <input type="hidden" name="client_phone_code" required pattern="\+?\d+" display_label="hidden" class="data-intl-tel-code" value="7" />
+                    </fieldset>
+                    <fieldset class="request-form__fieldset">
+                        <input name="client_mail" class="input" type="email" required placeholder="Email"/>
+                    </fieldset>
+                    <fieldset class="request-form__fieldset">
+                        <textarea name="client_message" class="textarea" required placeholder="Комментарий"></textarea>
+                    </fieldset>
+                </div>
+                <div class="request-form__disclaimer">
+                    <small>Нажимая «Отправить», вы предоставляете Согласие на обработку персональных данных в
+                        соответствии с <a href="https://unitpay.ru/policy" target="_blank">Политикой в отношении обработки
+                            персональных данных</a></small>
+                </div>
+                <div class="request-form__footer">
+                    <div class="g-recaptcha"
+                         data-sitekey="6LffMPIaAAAAABw3kb2wpOja2On1_ASnpteyCgiM"
+                         data-callback="onSubmit"
+                         data-size="invisible">
+                    </div>
+                    <input type="submit" class="request-form__button button button_green" value="Отправить"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="request-row__image"></div>
+</div>            </div>
+        </div>
+    </div>
+
+
+<div class="request-popup">
+    <div class="request-popup__underlay js-popup-trigger"></div>
+    <div class="request-popup__modal">
+        <div class="request-popup__inner">
+            <div class="request-popup__header">
+                <div class="request-popup__title">Оставьте свои контакты и мы с вами свяжемся!</div>
+                <div class="request-popup__close js-popup-trigger"></div>
+            </div>
+            <div class="request-popup__body">
+                <div class="request-popup__title">
+                </div>
+                <form class="request-popup__form">
+                    <div class="request-popup__form-body">
+                        <fieldset class="request-popup__fieldset">
+                            <input type="text" class="request-popup__input input" placeholder="Имя" />
+                        </fieldset>
+                        <fieldset class="request-popup__fieldset">
+                            <input type="text" class="request-popup__input input" placeholder="Номер телефона" />
+                        </fieldset>
+                        <fieldset class="request-popup__fieldset">
+                            <input type="text" class="request-popup__input input" placeholder="Email" />
+                        </fieldset>
+                    </div>
+                    <div class="request-popup__form-footer">
+                        <input type="submit" class="request-popup__button button button_blue" value="Оставить заявку" />
+                    </div>
+                </form>
+            </div>
+            <div class="request-popup__footer">
+                <div class="request-popup__disclaimer">
+                    Нажимая кнопку, вы подтверждаете согласие с <a href="#" class="request-popup__link">общими условиями сервиса</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer__wrapper wrapper">
+        <div class="footer__row">
+            <div class="footer__container footer__container_copyright">
+                <div class="footer__copyright">
+                    <div class="header__col header__col_logo">
+                        <a href="https://unitpay.ru/"><div class="logo"></div></a>
+                    </div>
+                    <div class="footer__brand">© <script>document.write(new Date().getFullYear());</script> ООО &laquo;Юнитпэйру&raquo;</div>
+                    <div class="footer__social">
+                        <div class="social">
+                            <div class="social__list">
+                                <div class="social__item">
+                                    <a href="https://t.me/unitpay" rel="nofollow" target="_blank" class="social__link">
+                                        <div class="social__icon social__icon_telegram"></div>
+                                    </a>
+                                </div>
+                                <div class="social__item">
+                                    <a href="https://vk.com/unitpay" rel="nofollow" target="_blank" class="social__link">
+                                        <div class="social__icon social__icon_vk"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__container footer__container_menu">
+                <div class="footer__menu">
+                    <div class="footer-menu">
+                        <div class="footer-menu__group">
+                            <div class="footer-menu__title">
+                                <p class="footer-menu__link">Продукты</p>
+                            </div>
+                            <div class="footer-menu__list">
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/products#payments">Прием платежей</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/receipts">Юнит. Чеки</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/products#masspayments">Массовые выплаты</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-menu__group">
+                            <div class="footer-menu__title">
+                                <p class="footer-menu__link">Ресурсы</p>
+                            </div>
+                            <div class="footer-menu__list">
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://help.unitpay.ru/first_steps" rel="nofollow" target="_blank">Начало работы</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://help.unitpay.ru/payments" rel="nofollow" target="_blank">Для разработчиков</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://help.unitpay.ru/modules/cms-modules" rel="nofollow">Готовые модули</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-menu__group">
+                            <div class="footer-menu__title">
+                                <p class="footer-menu__link">Компания</p>
+                            </div>
+                            <div class="footer-menu__list">
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/company">О компании</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/affiliates">Партнерская программа</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="https://unitpay.ru/support">Служба поддержки</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-menu__group">
+                            <div class="footer-menu__title">
+                                <p class="footer-menu__link">Контакты</p>
+                            </div>
+                            <div class="footer-menu__list">
+                                <div class="footer-menu__item">
+                                    <a class="footer-menu__link" href="mailto:partners@unitpay.ru" target="_blank">partners@unitpay.ru</a>
+                                </div>
+                                <div class="footer-menu__item">
+                                    <p><a class="footer-menu__link" href="tel:88002228210">8-800-222-82-10</a> (пн–пт c 9:00 до 17:00 МСК)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
